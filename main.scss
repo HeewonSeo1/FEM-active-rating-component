@@ -1,0 +1,252 @@
+// Colors
+$clr-primary: hsl(25, 97%, 53%);
+$clr-neutral-min: hsl(0, 0%, 100%);
+$clr-neutral-min-dkr: hsl(217, 12%, 63%);
+$clr-neutral-max: hsl(213, 19%, 18%);
+$clr-neutral-max-dkr: hsl(216, 12%, 8%);
+
+// Typography
+$font: "Overpass", sans-serif;
+$font-size-default: 16px;
+$fw-regular: 400;
+$fw-heavy: 700;
+
+$transition: all .3s;
+
+@mixin round {
+    background: hsl(213, 19%, 26%);
+    border-radius: 50%;
+}
+
+@mixin focus {
+    background: $clr-neutral-min;
+    color: $clr-neutral-max-dkr;
+}
+
+*, 
+*:before, 
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+
+button {
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $clr-neutral-max-dkr;
+    color: $clr-neutral-min;
+    font-size: $font-size-default;
+    font-family: $font;
+}
+
+.container {
+    width: 320px;
+    background: $clr-neutral-max;
+    border-radius: 15px;
+}
+
+.card {
+    margin: 1.5rem;
+
+    .card-icon { //something wrong with this
+        position: relative;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+
+        @include round;
+
+        img { //fix lol
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+    }
+
+    .card-text {
+        margin: 1rem 0;
+
+        .heading {
+            font-weight: $fw-regular;
+            font-size: 1.5rem;
+            padding-bottom: .625rem;
+        }
+
+        .description {
+            font-size: .84375rem;
+            font-weight: $fw-regular;
+            color: $clr-neutral-min-dkr;
+        }
+    }
+
+    .card-ratings {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        .rating {
+            color: $clr-neutral-min-dkr;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-content: center;
+            transition: $transition;
+            @include round;
+
+            &:hover {
+                background: $clr-primary;
+                color: $clr-neutral-max-dkr;
+            }
+
+            &:focus {
+                @include focus;
+            }
+        }
+    }
+
+    .submit {
+        width: 100%;
+        background: $clr-primary;
+        color: $clr-neutral-max-dkr;
+        font-weight: $fw-heavy;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1.25px;
+        padding: .625rem 0;
+        border-radius: 1.5625rem;
+        transition: $transition;
+
+        &:hover, &:focus {
+            @include focus;
+        }
+    }
+}
+
+.card-submitted {
+    display: none;
+    text-align: center;
+    margin: 1.5rem;
+
+    .submitted-img {
+        margin: 30px 0 15px;
+    }
+
+    .submitted-rating {
+        display: inline-block;
+        background: hsl(213, 19%, 26%);
+        color: $clr-primary;
+        font-size: .84375rem;
+        font-weight: 400;
+        border-radius: 25px;
+        padding: 4px 12px;
+        text-wrap: nowrap;
+    }
+
+    .submitted-text {
+        margin: 1rem 0;
+
+        .submitted-heading {
+            font-weight: $fw-regular;
+            font-size: 1.5rem;
+            padding-bottom: .625rem;
+        }
+
+        .submitted-description {
+            font-size: .84375rem;
+            font-weight: $fw-regular;
+            color: $clr-neutral-min-dkr;
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+
+    .container {
+        width: 400px;
+    }
+
+    .card {
+        margin: 1.5rem;
+    
+        .card-icon { //something wrong with this
+            position: relative;
+            width: 55px;
+            height: 55px;
+            overflow: hidden;
+    
+            @include round;
+    
+            img { //fix lol
+                position: absolute;
+                left: 20px;
+                top: 20px;
+            }
+        }
+    
+        .card-text {
+            margin-top: 1.5rem;
+
+            .heading {
+                font-weight: $fw-regular;
+                font-size: 1.5rem;
+                padding-bottom: .625rem;
+            }
+    
+            .description {
+                font-size: 1rem;
+            }
+        }
+    
+        .card-ratings {
+            margin-bottom: 2rem;
+    
+            .rating {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+
+    .card-submitted {
+    
+        .submitted-img {
+            margin-bottom: 1.5rem;
+        }
+    
+        .submitted-rating {
+            margin-bottom: 1rem;
+        }
+    
+        .submitted-text {
+    
+            .submitted-heading {
+                font-weight: $fw-regular;
+                font-size: 1.5rem;
+                padding-bottom: .625rem;
+            }
+    
+            .submitted-description {
+                font-size: 1rem;
+                font-weight: $fw-regular;
+                color: $clr-neutral-min-dkr;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+

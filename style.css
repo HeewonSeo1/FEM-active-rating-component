@@ -1,0 +1,189 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(216, 12%, 8%);
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  font-family: "Overpass", sans-serif;
+}
+
+.container {
+  width: 320px;
+  background: hsl(213, 19%, 18%);
+  border-radius: 15px;
+}
+
+.card {
+  margin: 1.5rem;
+}
+.card .card-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: hsl(213, 19%, 26%);
+  border-radius: 50%;
+}
+.card .card-icon img {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+.card .card-text {
+  margin: 1rem 0;
+}
+.card .card-text .heading {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-bottom: 0.625rem;
+}
+.card .card-text .description {
+  font-size: 0.84375rem;
+  font-weight: 400;
+  color: hsl(217, 12%, 63%);
+}
+.card .card-ratings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.card .card-ratings .rating {
+  color: hsl(217, 12%, 63%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  transition: all 0.3s;
+  background: hsl(213, 19%, 26%);
+  border-radius: 50%;
+}
+.card .card-ratings .rating:hover {
+  background: hsl(25, 97%, 53%);
+  color: hsl(216, 12%, 8%);
+}
+.card .card-ratings .rating:focus {
+  background: hsl(0, 0%, 100%);
+  color: hsl(216, 12%, 8%);
+}
+.card .submit {
+  width: 100%;
+  background: hsl(25, 97%, 53%);
+  color: hsl(216, 12%, 8%);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.25px;
+  padding: 0.625rem 0;
+  border-radius: 1.5625rem;
+  transition: all 0.3s;
+}
+.card .submit:hover, .card .submit:focus {
+  background: hsl(0, 0%, 100%);
+  color: hsl(216, 12%, 8%);
+}
+
+.card-submitted {
+  display: none;
+  text-align: center;
+  margin: 1.5rem;
+}
+.card-submitted .submitted-img {
+  margin: 30px 0 15px;
+}
+.card-submitted .submitted-rating {
+  display: inline-block;
+  background: hsl(213, 19%, 26%);
+  color: hsl(25, 97%, 53%);
+  font-size: 0.84375rem;
+  font-weight: 400;
+  border-radius: 25px;
+  padding: 4px 12px;
+  text-wrap: nowrap;
+}
+.card-submitted .submitted-text {
+  margin: 1rem 0;
+}
+.card-submitted .submitted-text .submitted-heading {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-bottom: 0.625rem;
+}
+.card-submitted .submitted-text .submitted-description {
+  font-size: 0.84375rem;
+  font-weight: 400;
+  color: hsl(217, 12%, 63%);
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    width: 400px;
+  }
+  .card {
+    margin: 1.5rem;
+  }
+  .card .card-icon {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    background: hsl(213, 19%, 26%);
+    border-radius: 50%;
+  }
+  .card .card-icon img {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+  .card .card-text {
+    margin-top: 1.5rem;
+  }
+  .card .card-text .heading {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 0.625rem;
+  }
+  .card .card-text .description {
+    font-size: 1rem;
+  }
+  .card .card-ratings {
+    margin-bottom: 2rem;
+  }
+  .card .card-ratings .rating {
+    width: 55px;
+    height: 55px;
+  }
+  .card-submitted .submitted-img {
+    margin-bottom: 1.5rem;
+  }
+  .card-submitted .submitted-rating {
+    margin-bottom: 1rem;
+  }
+  .card-submitted .submitted-text .submitted-heading {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 0.625rem;
+  }
+  .card-submitted .submitted-text .submitted-description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: hsl(217, 12%, 63%);
+    margin-bottom: 2rem;
+  }
+}
